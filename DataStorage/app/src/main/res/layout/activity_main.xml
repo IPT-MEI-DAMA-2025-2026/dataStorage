@@ -130,4 +130,46 @@
 
     </LinearLayout>
 
+    <!-- Tarefa 4 - Internal Storage -->
+    <LinearLayout style="@style/contentor_geral">
+
+        <View style="@style/linha_separacao" />
+
+        <TextView
+            style="@style/titulo_seccao"
+            android:text="@string/internal_storage" />
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <EditText
+                android:id="@+id/editText4a"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesNome"
+                android:inputType="text"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/editText4b"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesIdade"
+                android:inputType="number"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <Button
+                android:id="@+id/btWrite4"
+                style="@style/buttonWrite"
+                android:text="@string/btWrite" />
+
+            <Button
+                android:id="@+id/btRead4"
+                style="@style/buttonRead"
+                android:text="@string/btRead" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

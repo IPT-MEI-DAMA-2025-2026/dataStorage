@@ -87,4 +87,47 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <!-- Tarefa 3 - cache -->
+    <LinearLayout style="@style/contentor_geral">
+
+        <View style="@style/linha_separacao" />
+
+        <TextView
+            style="@style/titulo_seccao"
+            android:text="@string/Cache" />
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <EditText
+                android:id="@+id/editText3a"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesNome"
+                android:inputType="text"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/editText3b"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesIdade"
+                android:inputType="number"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <Button
+                android:id="@+id/btWrite3"
+                style="@style/buttonWrite"
+                android:text="@string/btWrite" />
+
+            <Button
+                android:id="@+id/btRead3"
+                style="@style/buttonRead"
+                android:text="@string/btRead" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Data Storage</string>
+
+    <!-- STRINGS -->
+    <string name="label_cabecalho">Armazenamento de dados</string>
+    <string name="shared_preferences">Shared Preferences</string>
+    <string name="shared_preferencesMultiFich">Shared Preferences (múltiplos ficheiros)</string>
+    <string name="Cache">Cache</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="external_storage">External Storage</string>
+    <string name="sharedPrefencesEditText">escreva algum texto</string>
+    <string name="sharedPreferencesNome">escreva o seu nome</string>
+    <string name="sharedPreferencesIdade">escreva a sua idade</string>
+    <string name="btWrite">Escreve</string>
+    <string name="btRead">Lê dados</string>
+    <string name="dados_guardados">Dados guardados</string>
+    <string name="txt_vazio">Não encontrei nada</string>
+    <string name="cache_vazia">Cache vazia</string>
+    <string name="escritaErradaCache">Não consegui escrever na Cache</string>
+    <string name="internal_storage_vazia">A internal storage está vazia</string>
+    <string name="external_storage_vazia">A external storage está vazia</string>
+    <string name="escritaErradaExternalStorage">Não consegui escrever na ExternalStorage</string>
+
 </resources>

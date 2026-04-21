@@ -46,5 +46,45 @@
 
     </LinearLayout>
 
+    <!-- Tarefa 2 - Shared Preferences com múltiplos ficheiros -->
+    <LinearLayout style="@style/contentor_geral">
 
+        <View style="@style/linha_separacao" />
+
+        <TextView
+            style="@style/titulo_seccao"
+            android:text="@string/shared_preferencesMultiFich" />
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <EditText
+                android:id="@+id/editText2a"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesNome"
+                android:inputType="text"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/editText2b"
+                style="@style/editText"
+                android:hint="@string/sharedPreferencesIdade"
+                android:inputType="number"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/contentor_horizontal">
+
+            <Button
+                android:id="@+id/btWrite2"
+                style="@style/buttonWrite"
+                android:text="@string/btWrite" />
+
+            <Button
+                android:id="@+id/btRead2"
+                style="@style/buttonRead"
+                android:text="@string/btRead" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

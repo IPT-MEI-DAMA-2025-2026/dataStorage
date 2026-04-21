@@ -3,6 +3,7 @@ package pt.ipt.dama2026.datastorage
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -79,7 +80,82 @@ class MainActivity : AppCompatActivity() {
             lerInternalStorage()
         }
 
+
+        // Tarefa 5 - External Storage
+        viewBinding.btWrite5.setOnClickListener {
+            // se a app estiver a correr em Androids mais antigos (<=28)
+            // há necessidade de pedir autorização de escrita
+            escreverExternalStorage()
+            escondeTeclado(it)
+        }
+
+        viewBinding.btRead5.setOnClickListener {
+            lerExternalStorage()
+        }
+
     }
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // Tarefa 5 - External Storage
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    /**
+     * Escrever os dados do utilizador na External Storage
+     */
+    fun escreverExternalStorage() {
+        // endereço da pasta onde será gerado o ficheiro
+        // associado à área de atuação da aplicação
+        val directory: File = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)!!
+
+        // nome do ficheiro na External Storage
+        val file: File = File(directory, "dadosExternalStorage.txt")
+        try {
+            val fo: FileOutputStream = FileOutputStream(file)
+            val ps: PrintStream = PrintStream(fo)
+            ps.println(viewBinding.editText5a.text)
+            ps.println(viewBinding.editText5b.text)
+            ps.close()
+            fo.close()
+
+            // neste caso, vamos mostrar uma mensagem de 'conforto' ao utilizador
+            Toast.makeText(this, getString(R.string.dados_guardados), Toast.LENGTH_SHORT).show()
+        } catch (e: FileNotFoundException) {
+            Toast.makeText(
+                this,
+                getString(R.string.escritaErradaExternalStorage),
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    /**
+     * Ler os dados da External Storage, e mostrá-los ao utilizador
+     */
+    fun lerExternalStorage() {
+        val directory: File = Environment.getExternalStorageDirectory()
+        val file = File(directory, "dadosExternalStorage.txt")
+        try {
+            val fi = FileInputStream(file)
+            val sc = Scanner(fi)
+            val nome = sc.nextLine()
+            val idade = sc.nextLine()
+            sc.close()
+            fi.close()
+
+            // mostrar os dados
+            Snackbar.make(
+                viewBinding.root,
+                "Você chama-se ${
+                    nome.toString().uppercase()
+                } e tem $idade anos! - External Storage",
+                Snackbar.LENGTH_LONG
+            ).show()
+        } catch (e: FileNotFoundException) {
+            Toast.makeText(this, getString(R.string.external_storage_vazia), Toast.LENGTH_LONG)
+                .show()
+        }
+    }
+
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // Tarefa 4 - Internal Storage
